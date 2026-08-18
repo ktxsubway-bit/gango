@@ -2,28 +2,34 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>광고 모음</title>
   <style>
     body { 
       font-family: sans-serif; 
       padding: 20px; 
       background: #f9f9f9; 
+      margin: 0;
     }
     
+    /* 갤러리 레이아웃 (반응형 격자) */
     .gallery { 
-      display: flex; 
-      flex-wrap: wrap; 
-      gap: 15px; 
-      align-items: flex-start; 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+      gap: 20px; 
+      align-items: center; 
     }
     
+    /* 모니터/화면에 맞춰 크기가 자동으로 조절되는 이미지 설정 */
     .gallery img { 
-      width: auto; 
+      width: 100%; 
+      max-width: 100%; 
       height: auto; 
-      max-width: none; 
-      max-height: none; 
+      object-fit: contain; /* 잘림 방지 */
       border-radius: 8px; 
       box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+      background-color: #fff;
+      display: block;
     }
   </style>
 </head>
